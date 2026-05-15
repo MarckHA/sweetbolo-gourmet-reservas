@@ -17,6 +17,9 @@ if (!WHATSAPP_NUMBER) {
   throw new Error("Falta VITE_WHATSAPP_NUMBER en el archivo .env");
 }
 
+// Coloca esto fuera del componente Index, cerca de tus otras constantes
+const OFF_HOURS_DATE = new Date("2026-05-15T00:00:00"); // Ajusta a la medianoche de hoy
+
 const Index = () => {
   const [cart, setCart] = useState<CartMap>({});
   const [open, setOpen] = useState(false);
@@ -52,6 +55,7 @@ const Index = () => {
 
     const images = [hero1, hero2];
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isReservationsOpen, setIsReservationsOpen] = useState(true);
 
     useEffect(() => {
           const timer = setInterval(() => {
@@ -59,6 +63,23 @@ const Index = () => {
           }, 5000);
       return () => clearInterval(timer); // Limpieza para evitar fugas de memoria
     }, [images.length]);
+
+    // Efecto para el control de horario de reservas
+    useEffect(() => {
+      const checkAvailability = () => {
+        const now = new Date();
+        // Configura aquí la fecha de cierre (Año, Mes [0-11], Día, Hora, Min, Seg)
+        // Ejemplo: 16 de Mayo de 2024 a las 00:00:00 (Medianoche de hoy)
+        const offHoursDate = new Date(2026, 4, 14, 23, 59, 0); 
+        if (now >= offHoursDate) {
+          setIsReservationsOpen(false);
+        }
+      };
+      checkAvailability();
+      // Revisamos cada minuto por si el usuario deja la página abierta
+      const timer = setInterval(checkAvailability, 60000);
+      return () => clearInterval(timer);
+    }, []);
 
     const socialLinks = {
       instagram: "https://www.instagram.com/sweet_bolo_gourmet.ec/",
@@ -97,6 +118,65 @@ const Index = () => {
         });
         }
     };
+  
+  if (!isReservationsOpen) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6 text-center">
+        <div className="max-w-md space-y-6 animate-fade-up">
+          <img src={logo} alt="Logo" className="h-24 w-24 mx-auto object-contain mb-4" />
+          <h1 className="font-display text-4xl font-bold text-primary">
+            ¡Gracias por tu interés!
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Las reservas para la fecha actual han finalizado. 
+            Próximamente se avisará la fecha de nuevos pedidos a través de nuestras redes sociales.
+          </p>
+          <div className="flex items-center gap-4 justify-center">
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="rounded-full bg-card p-2.5 text-foreground shadow-soft transition-smooth hover:bg-primary hover:text-primary-foreground"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a
+              href={socialLinks.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="rounded-full bg-card p-2.5 text-foreground shadow-soft transition-smooth hover:bg-primary hover:text-primary-foreground"
+            >
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a
+              href={socialLinks.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="rounded-full bg-card p-2.5 text-foreground shadow-soft transition-smooth hover:bg-primary hover:text-primary-foreground"
+            >
+              <TikTokIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="rounded-full bg-card p-2.5 text-foreground shadow-soft transition-smooth hover:bg-primary hover:text-primary-foreground"
+            >
+              <MessageCircle className="h-5 w-5" />
+            </a>
+          </div>
+          <p className="text-xs text-muted-foreground pt-8 italic">
+            Atentamente, el equipo de Sweet Bolo Gourmet.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
 
   return (
     <div className="min-h-screen bg-background pb-32">
