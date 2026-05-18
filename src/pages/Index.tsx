@@ -7,18 +7,14 @@ import { PRODUCTS } from "@/components/sweet/products";
 import { calculatePrice, formatMoney, totalUnits, type CartMap } from "@/lib/pricing";
 import logo from "@/assets/logo.png";
 import logoP from "@/assets/logoPestania.png";
-import hero1 from "@/assets/bolos1.png"; // La primera que me pasaste
+import hero1 from "@/assets/bolos1.png"; 
 import hero2 from"@/assets/bolos2.png";
 
-// Número de WhatsApp configurado vía variable de entorno (ver .env.example)
-const WHATSAPP_NUMBER =  import.meta.env.VITE_WHATSAPP_NUMBER; // Valor por defecto para desarrollo
+const WHATSAPP_NUMBER =  import.meta.env.VITE_WHATSAPP_NUMBER; 
 
 if (!WHATSAPP_NUMBER) {
   throw new Error("Falta VITE_WHATSAPP_NUMBER en el archivo .env");
 }
-
-// Coloca esto fuera del componente Index, cerca de tus otras constantes
-const OFF_HOURS_DATE = new Date("2026-05-15T00:00:00"); // Ajusta a la medianoche de hoy
 
 const Index = () => {
   const [cart, setCart] = useState<CartMap>({});
@@ -68,9 +64,9 @@ const Index = () => {
     useEffect(() => {
       const checkAvailability = () => {
         const now = new Date();
-        // Configura aquí la fecha de cierre (Año, Mes [0-11], Día, Hora, Min, Seg)
-        // Ejemplo: 16 de Mayo de 2024 a las 00:00:00 (Medianoche de hoy)
-        const offHoursDate = new Date(2026, 4, 14, 23, 59, 0); 
+        // Configuramos aquí la fecha de cierre (Año, Mes [0-11], Día, Hora, Min, Seg)
+        // Ejemplo: 16 de Mayo de 2024 a las 00:00:00
+        const offHoursDate = new Date(2026, 4, 17, 23, 59, 0); 
         if (now >= offHoursDate) {
           setIsReservationsOpen(false);
         }
