@@ -5,6 +5,7 @@ import { CartSummary } from "@/components/sweet/CartSummary";
 import { ConfirmModal } from "@/components/sweet/ConfirmModal";
 import { PRODUCTS } from "@/components/sweet/products";
 import { calculatePrice, formatMoney, totalUnits, type CartMap } from "@/lib/pricing";
+import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 import logoP from "@/assets/logoPestania.png";
 import hero1 from "@/assets/bolos1.png"; 
@@ -19,9 +20,35 @@ if (!WHATSAPP_NUMBER) {
 const Index = () => {
   const [cart, setCart] = useState<CartMap>({});
   const [open, setOpen] = useState(false);
-  const units = useMemo(() => totalUnits(cart), [cart]);
-  const setQty = (id: string, qty: number) =>
+  //const [modalSuccess, setModalSuccess] = useState(false);
+  const { toast } = useToast();
 
+  const units = useMemo(() => totalUnits(cart), [cart]);
+  // Constantes de tiempo
+  const LAST_SEND_KEY = 'sweetbolo_last_order';
+  const COOLDOWN_MS = 60000; // 1 minuto en milisegundos
+
+  // --- NUEVA FUNCIÓN: Intercepta el intento de abrir el modal ---
+  const handleOpenModal = () => {
+    const now = Date.now();
+    const lastSend = localStorage.getItem(LAST_SEND_KEY);
+
+    // VALIDACIÓN: Si intenta enviar antes del minuto
+    if (lastSend && now - parseInt(lastSend) < COOLDOWN_MS) {
+      toast({
+        title: "¡Ups! Demasiado rápido 🏃‍♂️",
+        description: "Por favor, espera un minuto antes de enviar otro pedido.",
+        variant: "destructive", // Esto suele poner la notificación en color rojo/alerta
+        duration: 4000, // Desaparece en 4 segundos
+      });
+      return; 
+    }
+    // Si pasa la validación, abrimos el modal
+    setOpen(true);
+  };
+
+  const setQty = (id: string, qty: number) =>
+  
     setCart((c) => {
       const next = { ...c };
       if (qty <= 0) delete next[id];
@@ -47,7 +74,9 @@ const Index = () => {
     window.open(url, "_blank", "noopener,noreferrer");
     // 2. ¡IMPORTANTE! Vaciamos el carrito aquí
     setCart({});    
-    };
+    // --- NUEVO: Registramos la hora exacta en la que se envió exitosamente ---
+    localStorage.setItem(LAST_SEND_KEY, Date.now().toString());
+  };
 
     const images = [hero1, hero2];
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -202,8 +231,8 @@ const Index = () => {
     <div className="bg-accent/15 border-b border-accent/20 py-2 px-4 backdrop-blur-md bg-white/90">
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
-        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 18/05/26. 
-        Entregas mañana 19/05/26 a partir de las 14:00.
+        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 hrs del 18/05/26. 
+        Entregas mañana 19/05/26 a partir de las 14:00 hrs. 
         </p>
     </div>
     </div>
@@ -377,7 +406,7 @@ const Index = () => {
         </div>
       </footer>
 
-      <CartSummary units={units} onReserve={() => setOpen(true)} />
+      <CartSummary units={units} onReserve={handleOpenModal} />
       <ConfirmModal
         open={open}
         onOpenChange={setOpen}
