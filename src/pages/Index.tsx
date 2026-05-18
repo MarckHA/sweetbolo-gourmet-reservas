@@ -109,7 +109,7 @@ const Index = () => {
     const socialLinks = {
       instagram: "https://www.instagram.com/sweet_bolo_gourmet.ec/",
       facebook: "https://www.facebook.com/people/Sweet-Bolo-Gourmet/61582958589595/",
-      tiktok: "https://www.tiktok.com/@sweet_bolo_gourme"
+      tiktok: "https://www.tiktok.com/@sweet_bolo_gourmet"
     }
 
     const TikTokIcon = ({ className }) => (
@@ -228,7 +228,7 @@ const Index = () => {
     </header>
 
     {/* Banner Informativo (Justo debajo del header y también fijo) */}
-    <div className="bg-accent/15 border-b border-accent/20 py-2 px-4 backdrop-blur-md bg-white/90">
+    <div className="bg-accent/15 border-b border-accent/20 py-2 px-4 backdrop-blur-md">
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
         <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 hrs del 18/05/26. 
