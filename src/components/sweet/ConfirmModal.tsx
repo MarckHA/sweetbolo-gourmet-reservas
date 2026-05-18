@@ -164,12 +164,13 @@ export const ConfirmModal = ({ open, onOpenChange, cart, products, onConfirm }: 
 
             <DialogFooter className="gap-2 sm:gap-2">
               {/* Opción de volver atrás para no perder al cliente */}
-              <Button variant="outline" onClick={() => setShowNotice(true)}>
+              <Button variant="outline" onClick={() => setShowNotice(true)}
+                className="border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 transition-colors">
                 Volver
               </Button>
               <Button
                 onClick={handleConfirmAction}
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90" 
               >
                 Aceptar y enviar a WhatsApp
               </Button>
