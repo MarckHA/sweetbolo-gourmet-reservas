@@ -206,8 +206,8 @@ const Index = () => {
     <div className="bg-accent/15 border-b border-accent/20 py-2 px-4 backdrop-blur-md bg-white/90">
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
-        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta hoy 14/05/26 a las 23:59. 
-        Entregas mañana 15/05/26 a partir de las 10:00 AM.
+        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 17/05/26. 
+        Entregas mañana 18/05/26 a partir de las 14:00.
         </p>
     </div>
     </div>

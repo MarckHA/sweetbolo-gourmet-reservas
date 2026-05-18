@@ -8,7 +8,7 @@ interface Props {
   qty: number;
   onChange: (qty: number) => void;
 }
-const MAX_PER_PRODUCT = 30;
+const MAX_PER_PRODUCT = 10;
 
 export const ProductCard = ({ product, qty, onChange }: Props) => {
   return (
