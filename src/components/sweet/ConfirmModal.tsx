@@ -43,21 +43,9 @@ export const ConfirmModal = ({ open, onOpenChange, cart, products, onConfirm }: 
 
   // 3. Envolvemos el onConfirm original para también cambiar la UI
   const handleConfirmAction = () => {
-    const LAST_SEND_KEY = 'sweetbolo_last_order';
-    const COOLDOWN_MS = 60000; 
-    const now = Date.now();
-    const lastSend = localStorage.getItem(LAST_SEND_KEY);
-
-    // VALIDACIÓN: Si intenta enviar antes del minuto
-    if (lastSend && now - parseInt(lastSend) < COOLDOWN_MS) {
-      alert("Por favor, espera un minuto antes de enviar otro pedido.");
-      // No activamos setIsSuccess(true), así que no verá la pantalla de éxito
-      return; 
-    }
 
     // SI ES VÁLIDO:
     onConfirm(); // Ejecuta WhatsApp y limpia carrito en Index.tsx
-    localStorage.setItem(LAST_SEND_KEY, now.toString()); // Guarda el tiempo actual
     setIsSuccess(true); // Muestra la pantalla de éxito solo ahora
   };
 
@@ -102,7 +90,7 @@ export const ConfirmModal = ({ open, onOpenChange, cart, products, onConfirm }: 
               <DialogDescription className="text-base">
                 Para garantizar la calidad y textura perfecta de tus bolos, todos los pedidos se preparan y congelan adecuadamente.
                 <br /><br />
-                <strong className="text-foreground">Tu pedido será entregado el día de mañana a partir de las 14:00 hrs.</strong>
+                <strong className="text-foreground">Tu pedido será entregado el día de mañana 22/05/26 a partir de las 09:00 hrs.</strong>
               </DialogDescription>
             </DialogHeader>
             <DialogFooter className="w-full gap-2 mt-6 sm:gap-2">
