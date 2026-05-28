@@ -44,7 +44,7 @@ export const ConfirmModal = ({ open, onOpenChange, cart, products, onConfirm }: 
   // 3. Envolvemos el onConfirm original para también cambiar la UI
   const handleConfirmAction = () => {
 
-    // SI ES VÁLIDO:
+    // SI ES VÁLIDO||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||:
     onConfirm(); // Ejecuta WhatsApp y limpia carrito en Index.tsx
     setIsSuccess(true); // Muestra la pantalla de éxito solo ahora
   };
@@ -77,7 +77,7 @@ export const ConfirmModal = ({ open, onOpenChange, cart, products, onConfirm }: 
           </div>
         ) : showNotice ? (
           // ------------------------------------------------
-          // PANTALLA 1: AVISO DE ENTREGA (NUEVA)
+          // PANTALLA 1: AVISO DE ENTREGA
           // ------------------------------------------------
           <div className="flex flex-col items-center p-2 animate-in fade-in duration-300">
             <DialogHeader className="flex flex-col items-center text-center space-y-3">
