@@ -95,7 +95,7 @@ const Index = () => {
         const now = new Date();
         // Configuramos aquí la fecha de cierre (Año, Mes [0-11], Día, Hora, Min, Seg)
         // Ejemplo: 16 de Mayo de 2024 a las 00:00:00
-        const offHoursDate = new Date(2026, 5, 12, 23, 59, 0); 
+        const offHoursDate = new Date(2026, 5, 11, 23, 59, 0); 
         if (now >= offHoursDate) {
           setIsReservationsOpen(false);
         }
