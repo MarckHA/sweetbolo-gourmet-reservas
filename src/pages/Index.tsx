@@ -95,7 +95,7 @@ const Index = () => {
         const now = new Date();
         // Configuramos aquí la fecha de cierre (Año, Mes [0-11], Día, Hora, Min, Seg)
         // Ejemplo: 16 de Mayo de 2024 a las 00:00:00
-        const offHoursDate = new Date(2026, 5, 11, 23, 59, 0); 
+        const offHoursDate = new Date(2026, 5, 15, 23, 59, 0); 
         if (now >= offHoursDate) {
           setIsReservationsOpen(false);
         }
@@ -232,8 +232,8 @@ const Index = () => {
     <div className="bg-accent/15 border-b border-accent/20 py-2 px-4 backdrop-blur-md">
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
-        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 11/06/26. 
-        Entregas hoy y mañana 11/06/26 a partir de las 10:00. 
+        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 15/06/26. 
+        Entregas el día 16/06/26 a partir de las 09:00. 
         </p>
     </div>
     </div>
