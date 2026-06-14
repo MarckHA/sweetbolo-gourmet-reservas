@@ -89,6 +89,7 @@ export const ConfirmModal = ({ open, onOpenChange, cart, products, onConfirm }: 
               </DialogTitle>
               <DialogDescription className="text-base">
                 Para garantizar la calidad y textura perfecta de tus bolos, todos los pedidos se preparan y congelan adecuadamente.
+                Tu pedido será entregado el día 16/06/2026 a partir de las 09:00
                 <br /><br />
                 <strong className="text-foreground">Tu pedido será entregado en la ubicación que nos indiques o directamente en la plaza del CEC.</strong>
               </DialogDescription>
