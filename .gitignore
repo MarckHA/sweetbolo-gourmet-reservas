@@ -39,3 +39,7 @@ next-env.d.ts
 # Carpeta de Lovable (si decidiste no borrarla aún pero no quieres subirla)
 .workspace/
 tailwind.config.lov.json
+src/components/sweet/AboutUs.tsx
+src/assets/carrusel1.png
+src/assets/carrusel2.png
+src/assets/carrusel3.png
