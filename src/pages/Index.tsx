@@ -233,7 +233,7 @@ const Index = () => {
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
         <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 18/06/26. 
-        Entregas el día 21/06/26 a partir de las 09:00. 
+        Entregas el día 19/06/26 a partir de las 09:00. 
         </p>
     </div>
     </div>
