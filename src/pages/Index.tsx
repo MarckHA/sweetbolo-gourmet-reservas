@@ -154,7 +154,7 @@ const Index = () => {
           </h1>
           <p className="text-muted-foreground text-lg">
             Las reservas para la fecha 23/06/2026 han finalizado. 
-            Próxima apertura de reservas el 24/06/2026. 
+            Próxima apertura de reservas y entregas será el 24/06/2026. 
             Estén atentos a nuestras redes sociales para más novedades y promociones.
           </p>
           <div className="flex items-center gap-4 justify-center">
@@ -233,7 +233,7 @@ const Index = () => {
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
         <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 22/06/26. 
-        Entregas hoy y mañana 23/06/26 a partir de las 13:00. 
+        Entregas el día 23/06/26 a partir de las 13:00. 
         </p>
     </div>
     </div>
