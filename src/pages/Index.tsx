@@ -154,7 +154,7 @@ const Index = () => {
           </h1>
           <p className="text-muted-foreground text-lg">
             Las reservas para la fecha 23/06/2026 han finalizado. 
-            Próxima apertura de reservas el 24/06/2026. 
+            Próxima apertura de reservas y entregas será el 24/06/2026. 
             Estén atentos a nuestras redes sociales para más novedades y promociones.
           </p>
           <div className="flex items-center gap-4 justify-center">
