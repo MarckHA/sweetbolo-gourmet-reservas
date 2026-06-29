@@ -6,6 +6,7 @@ import oreo from "@/assets/bolo-oreo.png";
 import chocomenta from "@/assets/bolo-chocomenta.png";
 import manicho from "@/assets/bolo-manicho.png";
 import cheesecake from "@/assets/bolo-cheesecake.png";
+import coco from "@/assets/bolo-coco.png";
 
 export type Product = {
   id: string;
@@ -23,4 +24,5 @@ export const PRODUCTS: Product[] = [
   { id: "chocomenta", name: "Chocomenta", description: "Chocolate con menta fresca", image: chocomenta},
   { id: "manicho", name: "Manicho", description: "Chocolate con maní crocante", image: manicho},
   { id: "cheesecake", name: "Cheesecake Maracuyá", description: "Cheesecake con maracuyá", image: cheesecake},
+  { id: "coco", name: "Coco", description: "Coco rallado y dulce de leche", image: coco},
 ];
