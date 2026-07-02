@@ -90,7 +90,7 @@ export const ConfirmModal = ({ open, onOpenChange, cart, products, onConfirm }: 
               <DialogDescription className="text-base">
                 Para garantizar la calidad y textura perfecta de tus bolos, todos los pedidos se preparan y congelan adecuadamente.
                 <br /><br />
-                <strong className="text-foreground">Tu pedido será entregado el 30/06/26 a partir de las 13:00.</strong>
+                <strong className="text-foreground">Tu pedido será entregado el 03/07/26 a partir de las 09:00.</strong>
               </DialogDescription>
             </DialogHeader>
             <DialogFooter className="w-full gap-2 mt-6 sm:gap-2">
