@@ -95,7 +95,7 @@ const Index = () => {
         const now = new Date();
         // Configuramos aquí la fecha de cierre (Año, Mes [0-11], Día, Hora, Min, Seg)
         // Ejemplo: 16 de Mayo de 2024 a las 00:00:00
-        const offHoursDate = new Date(2026, 6, 27, 23, 59, 0); 
+        const offHoursDate = new Date(2026, 6, 30, 23, 59, 0); 
         if (now >= offHoursDate) {
           setIsReservationsOpen(false);
         }
@@ -153,8 +153,8 @@ const Index = () => {
             ¡Gracias por tu interés!
           </h1>
           <p className="text-muted-foreground text-lg">
-            Las reservas para la fecha 28/07/2026 han finalizado. 
-            Próxima apertura de reservas será el 30/07/2026. 
+            Las reservas para la fecha 31/07/2026 han finalizado. 
+            Próxima apertura de reservas será el 02/08/2026. 
             Estén atentos a nuestras redes sociales para más novedades y promociones.
           </p>
           <div className="flex items-center gap-4 justify-center">
@@ -232,8 +232,8 @@ const Index = () => {
     <div className="bg-accent/15 border-b border-accent/20 py-2 px-4 backdrop-blur-md">
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
-        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 27/07/26. 
-        Entregas el día 28/07/26 a partir de la 13:00. 
+        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 30/07/26. 
+        Entregas el día 31/07/26 a partir de la 09:00 hrs. 
         </p>
     </div>
     </div>
@@ -270,7 +270,7 @@ const Index = () => {
             </h1>
         
             <p className="max-w-md text-lg text-gray-100 drop-shadow-sm">
-              8 sabores únicos hechos con amor. A solo {formatMoney(0.75)} cada uno.
+              9 sabores únicos hechos con amor. A solo {formatMoney(0.75)} cada uno.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
