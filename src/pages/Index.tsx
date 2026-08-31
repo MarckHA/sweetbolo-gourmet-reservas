@@ -95,7 +95,7 @@ const Index = () => {
         const now = new Date();
         // Configuramos aquí la fecha de cierre (Año, Mes [0-11], Día, Hora, Min, Seg)
         // Ejemplo: 16 de Mayo de 2024 a las 00:00:00
-        const offHoursDate = new Date(2026, 7, 27, 23, 59, 0); 
+        const offHoursDate = new Date(2026, 7, 31, 23, 59, 0); 
         if (now >= offHoursDate) {
           setIsReservationsOpen(false);
         }
@@ -153,8 +153,8 @@ const Index = () => {
             ¡Gracias por tu interés!
           </h1>
           <p className="text-muted-foreground text-lg">
-              Las reservas para la fecha 28/08/2026 han finalizado. 
-            Próxima apertura de reservas será el 31/08/2026. 
+              Las reservas para la fecha 01/09/2026 han finalizado. 
+            Próxima apertura de reservas será el 03/09/2026. 
             Estén atentos a nuestras redes sociales para más novedades y promociones.
           </p>
           <section 
@@ -265,8 +265,8 @@ const Index = () => {
     <div className="bg-accent/15 border-b border-accent/20 py-2 px-4 backdrop-blur-md">
         <p className="text-center text-[10px] sm:text-xs font-medium text-primary leading-tight">
         <AlertCircle className="inline-block h-3.5 w-3.5 mr-1" />
-        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 27/08/26. 
-        Entregas el día 28/08/26 a partir de las 09:00. 
+        <span className="font-bold text-accent">Importante:</span> Pedidos abiertos hasta las 23:59 del 31/08/26. 
+        Entregas el día 01/09/26 a partir de las 12:30. 
         </p>
     </div>
     </div>
